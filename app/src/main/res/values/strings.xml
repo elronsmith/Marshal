@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Marshal</string>
+    <!-- main -->
+    <string name="main_easy">Отображает список разрешений</string>
+    <string name="main_meduim">Проверяет разрешения на старте экрана</string>
+    <string name="main_hard">Проверяет разрешения на старте экрана.\nПоказывает диалог перед открытием экрана.</string>
+    <!-- permissions -->
+    <string name="permission_title">Внимание</string>
+    <string name="permission_read_external_storage">Нет доступа к SDCARD, нужно разрешить доступ: нажмите [разрешить] или откройте [Настройки] > [Разрешения]</string>
+    <string name="permission_gps">Нет доступа к GPS, нужно разрешить доступ: нажмите [разрешить] или откройте [Настройки] > [Разрешения]</string>
+    <string name="permission_button_allow">РАЗРЕШИТЬ</string>
+    <string name="permission_button_close">ЗАКРЫТЬ</string>
+    <string name="permission_button_settings">НАСТРОЙКИ</string>
+</resources>

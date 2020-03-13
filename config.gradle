@@ -1,0 +1,44 @@
+ext {
+    app_compileSdkVersion           = 28
+    app_buildToolsVersion           = "28.0.3"
+    app_minSdkVersion               = 21
+    app_targetSdkVersion            = 28
+    // version
+    app_version_code                = 1
+    app_version_name                = "1.0.0"
+
+    versions = [
+            'arch': '2.2.0',
+    ]
+
+    deps = [
+            'androidx': [
+                    'core': 'androidx.core:core:1.1.0',
+                    'coreKtx': 'androidx.core:core-ktx:1.1.0',
+                    'annotation': 'androidx.annotation:annotation:1.1.0',
+                    'appcompat': 'androidx.appcompat:appcompat:1.1.0',
+                    'fragment': 'androidx.fragment:fragment:1.1.0',
+                    'vectorDrawable': 'androidx.vectordrawable:vectordrawable:1.0.0',
+                    'constraintLayout': 'androidx.constraintlayout:constraintlayout:1.1.3',
+                    'recyclerView': 'androidx.recyclerview:recyclerview:1.0.0',
+                    'cardview': 'androidx.cardview:cardview:1.0.0',
+                    'legacy_support_core_ui': 'androidx.legacy:legacy-support-core-ui:1.0.0',
+            ],
+            'arch': [
+                    'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.arch}",
+                    'viewmodel': "androidx.lifecycle:lifecycle-viewmodel:${versions.arch}",
+                    'livedata': "androidx.lifecycle:lifecycle-livedata:${versions.arch}",
+                    'compiler': "androidx.lifecycle:lifecycle-compiler:${versions.arch}",
+                    'java8': "androidx.lifecycle:lifecycle-common-java8:${versions.arch}",
+            ],
+            'test': [
+                    'junit': "junit:junit:4.12",
+                    'runner': "androidx.test:runner:1.2.0",
+                    'ext': "androidx.test.ext:junit:1.1.1",
+                    'espresso': "androidx.test.espresso:espresso-core:3.2.0",
+            ],
+            'okhttp3': 'com.squareup.okhttp3:okhttp:3.12.2',
+            'kotlinJdk7': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            'material': 'com.google.android.material:material:1.0.0',
+    ]
+}

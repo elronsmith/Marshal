@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        abortOnError true
+    }
+
+    compileSdkVersion rootProject.ext.app_compileSdkVersion
+    defaultConfig {
+        applicationId "ru.elron.examplemarshal"
+        minSdkVersion rootProject.ext.app_minSdkVersion
+        targetSdkVersion rootProject.ext.app_targetSdkVersion
+        versionCode rootProject.ext.app_version_code
+        versionName rootProject.ext.app_version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // UI
+    implementation rootProject.ext.deps.androidx.coreKtx
+    implementation rootProject.ext.deps.androidx.appcompat
+    implementation rootProject.ext.deps.androidx.constraintLayout
+    // ViewModel and LiveData
+    implementation rootProject.ext.deps.arch.extensions
+    implementation rootProject.ext.deps.arch.java8
+    // kotlin
+    implementation rootProject.ext.deps.kotlinJdk7
+    kapt rootProject.ext.deps.arch.compiler
+
+    // tests
+    testImplementation rootProject.ext.deps.test.junit
+    androidTestImplementation rootProject.ext.deps.test.ext
+    androidTestImplementation rootProject.ext.deps.test.espresso
+}
